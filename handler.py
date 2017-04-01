@@ -5,11 +5,10 @@ import xml.etree.ElementTree as ET
 import time
 from func import *
 
-sha1=hashlib.sha1()
 app=Flask(__name__)
 app.debug=True
 
-@app.route('/',methods['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def wxapp():
 	if request.method=='GET':
 		token='754130788zrzj'
