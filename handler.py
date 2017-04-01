@@ -13,7 +13,7 @@ def wxapp():
 	if request.method=='GET':
 		token='zrzj'
 		#data=request.args
-		signature=request.args.get['signature']
+		signature=request.args['signature']
 		timestamp=request.args.get['timestamp']
 		nonce=request.args.get['nonce']
 		echostr=request.args.get['echostr']
