@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-
+'''
 def app(environ, start_response):
     status = '200 OK'
     headers = [('Content-type', 'text/html')]
@@ -26,6 +26,7 @@ def app(environ, start_response):
     """
     body=[body_str]
     return body
-
+'''
+from main import app
 from bae.core.wsgi import WSGIApplication
 application = WSGIApplication(app)
