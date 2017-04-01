@@ -11,7 +11,7 @@ app.debug=True
 @app.route('/',methods=['GET','POST'])
 def wxapp():
 	if request.method=='GET':
-		token='754130788zrzj'
+		token='zrzj'
 		data=request.args
 		signature=data.get['signature','']
 		timestamp=data.get['timestamp','']
@@ -20,7 +20,7 @@ def wxapp():
 		s=[timestamp,nonce,token]
 		s.sort()
 		s=''.join(s)
-		if hashlib.sha1(s.encode('utf-8')).hexdigest()==signature:
+		if (hashlib.sha1(s.encode('utf-8')).hexdigest()==signature):
 			return make_response(echostr)
 		else:
 			rec=request.data
