@@ -17,7 +17,7 @@ def wxapp():
 		timestamp=data.get['timestamp','']
 		nonce=data.get['nonce','']
 		echostr=data.get['echostr','']
-		s=[timestamp,nonce,echostr]
+		s=[timestamp,nonce,token]
 		s.sort()
 		s=''.join(s)
 		print hashlib.sha1(s).hexdigest()
