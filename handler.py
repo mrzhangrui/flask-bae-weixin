@@ -12,11 +12,11 @@ app.debug=True
 def wxapp():
 	if request.method=='GET':
 		token='zrzj'
-		data=request.args
-		signature=data.get['signature','']
-		timestamp=data.get['timestamp','']
-		nonce=data.get['nonce','']
-		echostr=data.get['echostr','']
+		#data=request.args
+		signature=request.args.get['signature','']
+		timestamp=request.args.get['timestamp','']
+		nonce=request.args.get['nonce','']
+		echostr=request.args.get['echostr','']
 		s=[timestamp,nonce,token]
 		s.sort()
 		s=''.join(s)
