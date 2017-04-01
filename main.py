@@ -1,3 +1,4 @@
+#coding=utf-8
 from flask import Flask,request,make_response
 import hashlib
 import xml.etree.ElementTree as ET
