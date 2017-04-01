@@ -27,6 +27,7 @@ def app(environ, start_response):
     body=[body_str]
     return body
 '''
+import flask
 from main import app
 from bae.core.wsgi import WSGIApplication
 application = WSGIApplication(app)
