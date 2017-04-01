@@ -20,7 +20,6 @@ def wxapp():
 		s=[timestamp,nonce,token]
 		s.sort()
 		s=''.join(s)
-		print hashlib.sha1(s).hexdigest()
 		if hashlib.sha1(s.encode('utf-8')).hexdigest()==signature:
 			return make_response(echostr)
 		else:
