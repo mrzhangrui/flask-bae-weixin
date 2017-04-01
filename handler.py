@@ -20,7 +20,7 @@ def wxapp():
 		s=[timestamp,nonce,echostr].sort()
 		s=''.join(s)
 		if hashlib.sha1(s).hexdigest()==signature:
-			print(hashlib.sha1(s).hexdigest())
+			print hashlib.sha1(s).hexdigest()
 			return make_response(echostr)
 		else:
 			rec=request.data
