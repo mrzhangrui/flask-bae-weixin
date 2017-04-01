@@ -17,9 +17,10 @@ def wxapp():
 		timestamp=data.get['timestamp','']
 		nonce=data.get['nonce','']
 		echostr=data.get['echostr','']
-		s=[timestamp,nonce,echostr].sort()
+		s=[timestamp,nonce,echostr]
+		s.sort()
 		s=''.join(s)
-		if hashlib.sha1(s).hexdigest()==signature:
+		if hashlib.sha1(s.encode('utf-8')).hexdigest()==signature:
 			print hashlib.sha1(s).hexdigest()
 			return make_response(echostr)
 		else:
