@@ -45,7 +45,7 @@ def wxapp():
 			if Content.lower()==u'笑话':
 				content=Handler.xiaohua()
 
-			elif u'天气' in content.lower():
+			elif u'天气' in Content.lower():
 				city=content.strip(u'-天气')
 				if city:
 					content=Handler.tianqi(city)
