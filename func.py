@@ -16,7 +16,7 @@ def xiaohua():
 	re=requests.get(url,params=data).json()['result']
 	num=random.sample(range(len(re)),1)
 	for i in num:
-		content=re[i].encode('utf-8')
+		content=re[i]['content'].encode('utf-8')
 	return content
 
 
