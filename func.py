@@ -44,7 +44,7 @@ def tianqi(city):
 	#weather=re['weather']['info']
 	#tem=re['weather']['temperature']
 	#content=u'城市:%s\\n日期:%s\\n天气:%s\\n温度:%s'%(cityname,date,weather,tem)
-	content=re
+	content=city
 	return content
 
 
