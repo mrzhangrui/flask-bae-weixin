@@ -25,7 +25,7 @@ def wxapp():
 		else:
 			return echostr
 	else:
-		rec=request.data
+		rec=request.stream.read()
 		xml_rec=ET.fromstring(rec)
 		ToUserName=xml_rec.find('ToUserName').text
 		FromUserName=xml_rec.find('FromUserName').text
