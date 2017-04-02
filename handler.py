@@ -59,5 +59,5 @@ def wxapp():
 			response=make_response(reply%(FromUserName,ToUserName,str(int(time.time)),conntent))
 			response.content_type='application/xml'
 			return response
-if __name__=='__main__':
-	app.run()
+#if __name__=='__main__':
+#	app.run()
