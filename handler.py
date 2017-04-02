@@ -43,16 +43,16 @@ def wxapp():
 			'''
 		if xml_rec.find('MsgType').text =='text':
 			if Content.lower()==u'笑话':
-				content=Handler.xiaohua()
+				content=xiaohua()
 
 			elif u'天气' in Content.lower():
 				city=content.strip(u'-天气')
 				if city:
-					content=Handler.tianqi(city)
+					content=tianqi(city)
 				else:
 					content='请输入查询地址(例：湖北武汉-天气)'
 			else:
-				content=Handler.fanyi(Content)
+				content=fanyi(Content)
 
 		else:
 			Content='暂不支持非文本格式'

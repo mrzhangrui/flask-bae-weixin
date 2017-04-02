@@ -3,47 +3,45 @@ import requests
 
 import time,random
 from bs4 import BeautifulSoup
-class Handler():
-	def __init__():
-		pass
-	def xiaohua():
-		url='http://api.avatardata.cn/Joke/QueryJokeByTime'
-		page=random.sample(range(300),1)
-		data={
-			'key':'03ee63eff7d443e299416e07a05c6231',
-			'time':str(int(time.time())),
-			'sort':'desc',
-			'page':page
-		}
-		re=requests.get(url,params=data).json()['result']
-		i=random.sample(len(re),1)
-		content=re[i]
-		return content
+
+def xiaohua():
+	url='http://api.avatardata.cn/Joke/QueryJokeByTime'
+	page=random.sample(range(300),1)
+	data={
+		'key':'03ee63eff7d443e299416e07a05c6231',
+		'time':str(int(time.time())),
+		'sort':'desc',
+		'page':page
+	}
+	re=requests.get(url,params=data).json()['result']
+	i=random.sample(len(re),1)
+	content=re[i]
+	return content
 
 
-	def fanyi(word):
-		url='http://fanyi.youdao.com/openapi.do?keyfrom=zrzj11&key=693191544&type=data&doctype=json&version=1.1&q=%s'%word
-		re=requests.get(url).json()
-		word=re['query']
-		tran=re['translation']
-		explains=','.join(re['basic']['explains'])
-		content=u'%s\\n%s\\n网络释义:\\n%s'%(word,tran,explains)
-		return content
+def fanyi(word):
+	url='http://fanyi.youdao.com/openapi.do?keyfrom=zrzj11&key=693191544&type=data&doctype=json&version=1.1&q=%s'%word
+	re=requests.get(url).json()
+	word=re['query']
+	tran=re['translation']
+	explains=','.join(re['basic']['explains'])
+	content=u'%s\\n%s\\n网络释义:\\n%s'%(word,tran,explains)
+	return content
 
-	def tianqi(city):
-		url='http://api.avatardata.cn/Weather/Query'
-		page=random.sample(range(300),1)
-		data={
-			'key':'0cbf803c9d6640ed99b59b70d235baa9',
-			'cityname':city
-		}
-		re=requests.get(url,params=data).json()['result']['data']['realtime']
-		cityname=re['city_name']
-		date=re['date']
-		weather=re['weather']['info']
-		tem=re['weather']['temperature']
-		content=u'城市:%s\\n日期:%s\\n天气:%s\\n温度:%s'%(cityname,date,weather,tem)
-		return content
+def tianqi(city):
+	url='http://api.avatardata.cn/Weather/Query'
+	page=random.sample(range(300),1)
+	data={
+		'key':'0cbf803c9d6640ed99b59b70d235baa9',
+		'cityname':city
+	}
+	re=requests.get(url,params=data).json()['result']['data']['realtime']
+	cityname=re['city_name']
+	date=re['date']
+	weather=re['weather']['info']
+	tem=re['weather']['temperature']
+	content=u'城市:%s\\n日期:%s\\n天气:%s\\n温度:%s'%(cityname,date,weather,tem)
+	return content
 
 
 
