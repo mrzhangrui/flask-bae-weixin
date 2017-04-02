@@ -34,14 +34,14 @@ def wxapp():
 		relay='''
 				<xml>
 				<ToUserName><![CDATA[%s]]></ToUserName>
-				<FromUserName><!CDATA[%s]></FromUserName>
+				<FromUserName><![CDATA[%s]]></FromUserName>
 				<CreateTime>%s</CreateTime>
-				<MsgType><!CDATA[%s]></MsgType>
-				<Content><!CDATA[%s]></Contant>
+				<MsgType><![CDATA[%s]]></MsgType>
+				<Content><![CDATA[%s]]></Content>
 				<FuncFlag>0<.FuncFlog>
 				</xml>
 			'''
-		if rec.find('MsgType').text =='text':
+		if xml_rec.find('MsgType').text =='text':
 			if Content.lower()==u'笑话':
 				content=Handler.xiaohua()
 
