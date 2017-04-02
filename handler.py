@@ -13,10 +13,10 @@ def wxapp():
 	if request.method=='GET':
 		token='zrzj'
 		data=request.args
-		signature=data.get['signature','']
-		timestamp=data.get['timestamp','']
-		nonce=data.get['nonce','']
-		echostr=data.get['echostr','']
+		signature=data.get('signature','')
+		timestamp=data.get('timestamp','')
+		nonce=data.get('nonce','')
+		echostr=data.get('echostr','')
 		s=[timestamp,nonce,token]
 		s.sort()
 		s=''.join(s)
@@ -59,3 +59,5 @@ def wxapp():
 			response=make_response(reply%(FromUserName,ToUserName,str(int(time.time)),conntent))
 			response.content_type='application/xml'
 			return response
+if __name__=='__main__':
+	app.run()
