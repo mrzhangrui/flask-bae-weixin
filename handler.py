@@ -49,8 +49,8 @@ def wxapp():
 					content=tianqi(city)
 				else:
 					content='请输入查询地址(例：湖北武汉-天气)'
-				else:
-					content=fanyi(content)
+			else:
+				content=fanyi(content)
 
 		else:
 			Content='暂不支持非文本格式'
