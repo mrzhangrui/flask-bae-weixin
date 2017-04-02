@@ -30,6 +30,7 @@ def wxapp():
 		ToUserName=xml_rec.find('ToUserName').text
 		FromUserName=xml_rec.find('FromUserName').text
 		Content=xml_rec.find('Content').text.encode('utf-8')
+		print(Content)
 		#构造一个回复
 		relay='''
 				<xml>
@@ -42,10 +43,10 @@ def wxapp():
 				</xml>
 			'''
 		if xml_rec.find('MsgType').text =='text':
-			if Content.lower()==u'笑话':
+			if Content.lower()=='笑话':
 				content=xiaohua()
 
-			elif u'天气' in Content.lower():
+			elif '天气' in Content.lower():
 				city=content.strip(u'-天气')
 				if city:
 					content=tianqi(city)
