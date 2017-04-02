@@ -29,7 +29,7 @@ def wxapp():
 		xml_rec=ET.fromstring(rec)
 		ToUserName=xml_rec.find('ToUserName').text
 		FromUserName=xml_rec.find('FromUserName').text
-		Content=xml_rec.find('Content').text
+		Content=xml_rec.find('Content').text.encode('utf-8')
 		#构造一个回复
 		relay='''
 				<xml>
