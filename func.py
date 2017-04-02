@@ -32,13 +32,12 @@ def fanyi(word):
 
 def tianqi(city):
 	url='http://api.avatardata.cn/Weather/Query'
-	page=random.sample(range(300),1)
 	data={
 		'key':'0cbf803c9d6640ed99b59b70d235baa9',
 		'cityname':city
 	}
-	re=requests.get(url,params=data).json()['result']['data']
-	re=re['realtime']
+	re=requests.get(url,params=data).json()
+	re=re['result']['data']['realtime']
 	cityname=re['city_name']
 	date=re['date']
 	weather=re['weather']['info']
