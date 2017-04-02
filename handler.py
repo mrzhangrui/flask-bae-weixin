@@ -22,6 +22,8 @@ def wxapp():
 		s=''.join(s)
 		if (hashlib.sha1(s.encode('utf-8')).hexdigest()==signature):
 			return make_response(echostr)
+		else:
+			return echostr
 	else:
 		rec=request.data
 		xml_rec=ET.fromstring(rec)
