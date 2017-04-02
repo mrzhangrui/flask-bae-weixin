@@ -38,7 +38,7 @@ def tianqi(city):
 		'cityname':city
 	}
 	re=requests.get(url,params=data).json()
-	re=re['result']#['data']['realtime']
+	re=re['result']['realtime']
 	cityname=re['city_name']
 	date=re['date']
 	weather=re['weather']['info']
