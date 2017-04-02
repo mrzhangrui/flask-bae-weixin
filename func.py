@@ -14,7 +14,7 @@ def xiaohua():
 		'page':page
 	}
 	re=requests.get(url,params=data).json()['result']
-	i=random.sample(len(re),1)
+	i=random.sample(range(len(re)),1)
 	content=re[i]
 	return content
 
