@@ -52,7 +52,7 @@ def wxapp():
 				else:
 					content='请输入查询地址(例：湖北武汉-天气)'
 			else:
-				content=Handler.fanyi(content)
+				content=Handler.fanyi(Content)
 
 		else:
 			Content='暂不支持非文本格式'
