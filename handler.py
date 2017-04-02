@@ -47,7 +47,7 @@ def wxapp():
 				content=xiaohua()
 
 			elif '天气' in Content.lower():
-				city=Content.strip(u'-天气'.encode('utf-8'))
+				city=Content.strip(u'-天气'.encode('utf-8')).encode('utf-8')
 				if city:
 					content=tianqi(city)
 				else:
