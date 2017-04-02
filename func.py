@@ -23,7 +23,8 @@ def fanyi(word):
 	url='http://fanyi.youdao.com/openapi.do?keyfrom=zrzj11&key=693191544&type=data&doctype=json&version=1.1&q=%s'%word
 	re=requests.get(url).json()
 	word=re['query']
-	tran=re['translation'][1]
+	tran=re['translation']
+	tran=','.join(tran)
 	explains=','.join(re['basic']['explains'])
 	content=u'%s\n%s\n网络释义:\n%s'%(word,tran,explains)
 	return content
