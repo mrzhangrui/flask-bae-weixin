@@ -32,7 +32,7 @@ def fanyi(word):
 
 def tianqi(city):
 	url='http://api.avatardata.cn/Weather/Query'
-	city=city.encode('utf-8')
+	city=city
 	data={
 		'key':'0cbf803c9d6640ed99b59b70d235baa9',
 		'cityname':city
