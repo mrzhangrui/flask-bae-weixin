@@ -36,7 +36,7 @@ def wxapp():
 				<ToUserName><![CDATA[%s]]></ToUserName>
 				<FromUserName><![CDATA[%s]]></FromUserName>
 				<CreateTime>%s</CreateTime>
-				<MsgType><![CDATA[%s]]></MsgType>
+				<MsgType><![CDATA[text]]></MsgType>
 				<Content><![CDATA[%s]]></Content>
 				<FuncFlag>0<.FuncFlog>
 				</xml>
