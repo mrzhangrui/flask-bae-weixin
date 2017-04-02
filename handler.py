@@ -57,7 +57,7 @@ def wxapp():
 		else:
 			Content='暂不支持非文本格式'
 
-		response=make_response(relay%(FromUserName,ToUserName,str(int(time.time)),conntent))
+		response=make_response(relay%(FromUserName,ToUserName,str(int(time.time())),conntent))
 		response.content_type='application/xml'
 		return response
 #if __name__=='__main__':
